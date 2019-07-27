@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ExampleClassComponent /> should increase counter when button is clicked 1`] = `
+<div
+  className="example-class-component"
+>
+  <span
+    className="example-class-component__counter"
+  >
+    <FormattedMessage
+      defaultMessage="Counter"
+      id="counter"
+      values={Object {}}
+    />
+    : 
+    11
+  </span>
+  <button
+    className="example-class-component__button"
+    onClick={[Function]}
+  >
+    <FormattedMessage
+      defaultMessage="Click Me"
+      id="clickMe"
+      values={Object {}}
+    />
+  </button>
+</div>
+`;
+
+exports[`<ExampleClassComponent /> should render <ExampleClassComponent /> 1`] = `
+<div
+  className="example-class-component"
+>
+  <span
+    className="example-class-component__counter"
+  >
+    <FormattedMessage
+      defaultMessage="Counter"
+      id="counter"
+      values={Object {}}
+    />
+    : 
+    10
+  </span>
+  <button
+    className="example-class-component__button"
+    onClick={[Function]}
+  >
+    <FormattedMessage
+      defaultMessage="Click Me"
+      id="clickMe"
+      values={Object {}}
+    />
+  </button>
+</div>
+`;

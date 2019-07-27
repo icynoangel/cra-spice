@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should render <App /> 1`] = `
+<IntlProvider
+  key="en-EN"
+  locale="en-EN"
+  messages={Object {}}
+>
+  <div
+    className="app"
+  >
+    <div
+      className="app-content"
+    >
+      <InjectIntl(ExampleClassComponent)
+        initialCounter={10}
+      />
+      <InjectIntl(ExampleFunctionComponent)
+        value={100}
+      />
+    </div>
+  </div>
+</IntlProvider>
+`;

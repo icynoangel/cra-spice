@@ -1,0 +1,14 @@
+.example-class-component {
+  background-color: #dedede;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+
+  .example-class-component__counter {
+    padding: 5px;
+  }
+
+  .example-class-component__button {
+    background-color: #336699;
+    color: #ffffff;
+  }
+}
