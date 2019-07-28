@@ -1,14 +1,21 @@
+@import '../../styles/themes.scss';
+
 .example-class-component {
-  background-color: #dedede;
-  border: 1px solid #dedede;
-  border-radius: 5px;
+  @include themify() {
+    background-color: themed('content-primary-bg-color');
+    color: themed('content-primary-color');
+  }
 
   .example-class-component__counter {
-    padding: 5px;
+    @include themify() {
+      padding: themed('padding-normal');
+    }  
   }
 
   .example-class-component__button {
-    background-color: #336699;
-    color: #ffffff;
+    @include themify() {
+      background-color: themed('button-primary-bg-color');
+      color: themed('button-primary-color');
+    }
   }
 }

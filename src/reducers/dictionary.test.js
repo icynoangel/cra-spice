@@ -12,8 +12,8 @@ describe('Reducers - dictionary', function() {
     };
   });
 
-  it('should return initial state by default', () => {
-    expect(dictionary(initialState, {type: 'unhandled'})).toEqual(initialState);
+  it('should return initial state', () => {
+    expect(dictionary(this.state, {type: 'unhandled'})).toEqual(this.state);
   });
 
   it('should handle REQUEST_DICTIONARY_PENDING action', () => {

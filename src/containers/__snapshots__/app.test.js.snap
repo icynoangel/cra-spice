@@ -8,16 +8,23 @@ exports[`<App /> should render <App /> 1`] = `
 >
   <div
     className="app"
+    key="app"
   >
+    <ThemeHandler
+      theme="default"
+    />
     <div
       className="app-content"
     >
       <InjectIntl(ExampleClassComponent)
         initialCounter={10}
+        key="example-class-component"
       />
       <InjectIntl(ExampleFunctionComponent)
+        key="example-function-component"
         value={100}
       />
+      <Connect(ThemeSwitcher) />
     </div>
   </div>
 </IntlProvider>
