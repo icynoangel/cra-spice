@@ -1,14 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ExampleClassComponent from './exampleClassComponent';
-import { shallowWithIntl } from '../../testsHelper';
+import {shallowWithIntl} from '../../testsHelper';
 import enzymeToJson from 'enzyme-to-json';
 
-describe('<ExampleClassComponent />', function () {
-
+describe('<ExampleClassComponent />', function() {
   beforeEach(() => {
     this.initialCounter = 10;
-    
+
     this.getComponent = () => {
       return (
         <ExampleClassComponent.WrappedComponent

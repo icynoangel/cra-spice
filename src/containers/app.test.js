@@ -1,11 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './app';
-import { shallow, mount } from 'enzyme';
+import {shallow} from 'enzyme';
 import enzymeToJson from 'enzyme-to-json';
 
-describe('<App />', function () {
-
+describe('<App />', function() {
   beforeEach(() => {
     this.dictionary = {
       locale: 'en-EN',
@@ -30,7 +28,7 @@ describe('<App />', function () {
   });
 
   it('should fetch dictionary when component mounts', () => {
-    const wrapper = shallow(this.getComponent());
+    shallow(this.getComponent());
     expect(this.fetchDictionary).toHaveBeenCalled();
   });
 });

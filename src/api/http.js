@@ -1,7 +1,6 @@
-
 const getToken = () => {
   return localStorage.getItem('portfolio-token');
-}
+};
 
 const httpConfig = {
   mode: 'cors', // no-cors, cors, *same-origin
@@ -9,7 +8,7 @@ const httpConfig = {
   credentials: 'same-origin', // include, *same-origin, omit
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
-    'Token': getToken()
+    Token: getToken()
   }
 };
 

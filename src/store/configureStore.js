@@ -5,10 +5,7 @@ import thunk from 'redux-thunk';
 import reducer from '../reducers/reducer';
 
 function configureStore(middlewares = []) {
-  const store = createStore(
-    reducer, 
-    applyMiddleware(thunk, ...middlewares)
-  );
+  const store = createStore(reducer, applyMiddleware(thunk, ...middlewares));
 
   return {
     store,

@@ -4,7 +4,7 @@ import {
   REQUEST_DICTIONARY_ERROR
 } from '../constants/actionTypes';
 
-const initialState = {
+export const initialState = {
   messages: {},
   locale: 'en-EN',
   isFetching: false,
@@ -13,7 +13,7 @@ const initialState = {
 };
 
 const dictionary = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case REQUEST_DICTIONARY_PENDING:
       return {
         ...state,
@@ -25,7 +25,7 @@ const dictionary = (state = initialState, action) => {
         locale: action.response.locale,
         isFetching: false,
         fetched: true,
-        error: null 
+        error: null
       };
     case REQUEST_DICTIONARY_ERROR:
       return {

@@ -1,10 +1,13 @@
 import React from 'react';
-import {IntlProvider} from 'react-intl';
+import {IntlProvider, intlShape} from 'react-intl';
 import {mount, shallow} from 'enzyme';
 
 import dictionaryMock from './api/mocks/dictionary';
 
-const intlProvider = new IntlProvider({locale: dictionaryMock.locale, messages: dictionaryMock.messages}, {});;
+const intlProvider = new IntlProvider(
+  {locale: dictionaryMock.locale, messages: dictionaryMock.messages},
+  {}
+);
 const {intl} = intlProvider.getChildContext();
 
 /**
@@ -17,7 +20,7 @@ function nodeWithIntlProp(node) {
 export function shallowWithIntl(node, {context, ...additionalOptions} = {}) {
   return shallow(nodeWithIntlProp(node), {
     context: Object.assign({}, context, {intl}),
-    ...additionalOptions,
+    ...additionalOptions
   });
 }
 
@@ -28,6 +31,6 @@ export function mountWithIntl(
   return mount(nodeWithIntlProp(node), {
     context: Object.assign({}, context, {intl}),
     childContextTypes: Object.assign({}, {intl: intlShape}, childContextTypes),
-    ...additionalOptions,
+    ...additionalOptions
   });
 }

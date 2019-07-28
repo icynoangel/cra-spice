@@ -1,20 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ExampleFunctionComponent from './exampleFunctionComponent';
-import { shallowWithIntl } from '../../testsHelper';
+import {shallowWithIntl} from '../../testsHelper';
 import enzymeToJson from 'enzyme-to-json';
 
-describe('<ExampleFunctionComponent />', function () {
-
+describe('<ExampleFunctionComponent />', function() {
   beforeEach(() => {
     this.value = 10;
-    
+
     this.getComponent = () => {
-      return (
-        <ExampleFunctionComponent.WrappedComponent
-          value={this.value}
-        />
-      );
+      return <ExampleFunctionComponent.WrappedComponent value={this.value} />;
     };
   });
 
@@ -22,5 +16,4 @@ describe('<ExampleFunctionComponent />', function () {
     const wrapper = shallowWithIntl(this.getComponent());
     expect(enzymeToJson(wrapper)).toMatchSnapshot();
   });
-
 });
