@@ -41,6 +41,22 @@ Also starts node server that at this point only provides Intl messages
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `yarn test:update`
+
+Update tests snapshots
+
+### `yarn coverage`
+
+Generate unit tests coverage
+
+### `yarn eslint`
+
+Run linter on source files
+
+### `yarn beautify`
+
+Run prettier on source files
+
 ### `yarn build`
 
 Builds the app for production to the `build` folder.<br>
