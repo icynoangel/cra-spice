@@ -2,11 +2,11 @@ import './styles/index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/configureStore';
+import getMiddlewares from './middlewares';
 import App from './containers/app';
-import logger from './middlewares/logger';
 import * as serviceWorker from './serviceWorker';
 
-const storeConfig = configureStore([logger]);
+const storeConfig = configureStore(getMiddlewares());
 
 ReactDOM.render(
   <storeConfig.Provider store={storeConfig.store}>
