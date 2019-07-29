@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { setTheme } from '../../actions/theme';
-import themesObj from '../../styles/themes.scss'; // eslint-disable-line import/no-webpack-loader-syntax
-
-const THEMES = themesObj && themesObj.themes 
-  ? themesObj.themes.split(',').map(theme => theme.trim())
-  : ['default'];
+import { injectIntl } from 'react-intl';
 
 class ThemeSwitcher extends Component {
   static propTypes = {
-    theme: PropTypes.string
-  };
-  static defaultProps = {
-    theme: 'default'
+    theme: PropTypes.string.isRequired,
+    themes: PropTypes.array.isRequired,
+    setTheme: PropTypes.func.isRequired,
+    intl: PropTypes.object
   };
 
   changeTheme = (event) => {
@@ -21,13 +15,16 @@ class ThemeSwitcher extends Component {
   }
 
   render () {
-    const { theme } = this.props;
+    const { theme, themes, intl } = this.props;
     return ( 
       <div className="theme-switcher">
         <select value={theme} onChange={this.changeTheme}>
-          {THEMES.map(theme => (
+          {themes.map(theme => (
             <option key={`theme-${theme}`} value={theme}>
-              {theme}
+              {intl.formatMessage({
+                id: `${theme}theme`,
+                defaultMessage: theme
+              })}
             </option>
           ))}
         </select>
@@ -36,18 +33,4 @@ class ThemeSwitcher extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    theme: state.theme
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setTheme: (theme) => {
-      dispatch(setTheme(theme));
-    }
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ThemeSwitcher);
+export default injectIntl(ThemeSwitcher);

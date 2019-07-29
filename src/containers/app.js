@@ -4,7 +4,7 @@ import {IntlProvider} from 'react-intl';
 import {connect} from 'react-redux';
 import {fetchDictionary} from '../actions/dictionary';
 import ThemeHandler from '../components/themeHandler';
-import ThemeSwitcher from '../components/themeSwitcher';
+import ThemeSwitcher from './themeSwitcher';
 import ExampleClassComponent from '../components/exampleClassComponent';
 import ExampleFunctionComponent from '../components/exampleFunctionComponent';
 
@@ -29,7 +29,7 @@ class App extends Component {
                 value={100}
                 key="example-function-component"
               />
-              <ThemeSwitcher theme={theme} />
+              <ThemeSwitcher />
             </div>
           </div>
         </IntlProvider>

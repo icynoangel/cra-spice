@@ -46,7 +46,9 @@ app.get('/dictionary', (req, res) => {
     messages: {
       counter: 'Counter',
       clickMe: 'Click Me',
-      multipliedValue: 'Multiplied Value'
+      multipliedValue: 'Multiplied Value',
+      defaulttheme: 'Default theme',
+      darktheme: 'Dark theme'
     }
   });
 });
