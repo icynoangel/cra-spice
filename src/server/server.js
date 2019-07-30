@@ -32,25 +32,17 @@ app.use(function(req, res, next) {
 
 if (!isDevelopment) {
   app.use(express.static(path.resolve(__dirname, '../../build')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../../build/index.html'));
+  });
 }
-
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../../build/index.html'));
-});
+app.use(express.static(path.resolve(__dirname, '../i18n')));
 
 app.use(bodyParser.json()); // for parsing application/json
 
-app.get('/dictionary', (req, res) => {
-  res.send({
-    locale: 'en-EN',
-    messages: {
-      counter: 'Counter',
-      clickMe: 'Click Me',
-      multipliedValue: 'Multiplied Value',
-      defaulttheme: 'Default theme',
-      darktheme: 'Dark theme'
-    }
-  });
+app.get('/dictionary/:locale', (req, res) => {
+  const locale = req.params.locale;
+  res.sendFile(path.resolve(__dirname, `../i18n/${locale}.json`));
 });
 
 app.listen(PORT, function() {

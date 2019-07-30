@@ -4,7 +4,7 @@ import dictionary from './dictionary';
 import theme from './theme';
 
 export default combineReducers({
-  requestsReducer,
+  requests: requestsReducer,
   dictionary,
   theme
 });

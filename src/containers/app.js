@@ -1,12 +1,17 @@
 import './app.css';
 import React, {Component} from 'react';
-import {IntlProvider} from 'react-intl';
+import {IntlProvider, addLocaleData} from 'react-intl';
 import {connect} from 'react-redux';
 import {fetchDictionary} from '../actions/dictionary';
 import ThemeHandler from '../components/themeHandler';
 import ThemeSwitcher from './themeSwitcher';
 import ExampleClassComponent from '../components/exampleClassComponent';
 import ExampleFunctionComponent from '../components/exampleFunctionComponent';
+
+import en from 'react-intl/locale-data/en';
+import ro from 'react-intl/locale-data/ro';
+
+addLocaleData([...en, ...ro]);
 
 class App extends Component {
   render() {
@@ -39,7 +44,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchDictionary();
+    this.props.fetchDictionary('ro-RO');
+
+    setTimeout(() => {
+      this.props.fetchDictionary('en-EN');
+    }, 5000);
   }
 }
 
@@ -52,8 +61,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchDictionary: () => {
-      return dispatch(fetchDictionary());
+    fetchDictionary: (locale) => {
+      return dispatch(fetchDictionary(locale));
     }
   };
 };

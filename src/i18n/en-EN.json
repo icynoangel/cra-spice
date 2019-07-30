@@ -1,0 +1,10 @@
+{
+  "locale": "en-EN",
+  "messages": {
+    "counter": "Counter",
+    "clickMe": "Click Me",
+    "multipliedValue": "Multiplied Value",
+    "defaulttheme": "Default theme",
+    "darktheme": "Dark theme"
+  }
+}

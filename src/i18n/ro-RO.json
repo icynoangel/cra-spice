@@ -1,0 +1,10 @@
+{
+  "locale": "ro-RO",
+  "messages": {
+    "counter": "Numar",
+    "clickMe": "Apasa-ma",
+    "multipliedValue": "Valoare Multiplicata",
+    "defaulttheme": "Tema default",
+    "darktheme": "Tema inchisa"
+  }
+}

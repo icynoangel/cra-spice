@@ -23,12 +23,12 @@ describe('Actions - dictionary', function() {
     ];
 
     const store = mockStore({});
-    fetchMock.get(api.config.dictionary(), {
+    fetchMock.get(api.config.dictionary('en-EN'), {
       status: 200,
       body: response
     });
 
-    store.dispatch(fetchDictionary());
+    store.dispatch(fetchDictionary('en-EN'));
     // to track both actions we need to assert on next tick
     setTimeout(() => {
       expect(store.getActions()[0].type).toEqual(expectedActions[0].type);
@@ -49,12 +49,12 @@ describe('Actions - dictionary', function() {
     ];
 
     const store = mockStore({});
-    fetchMock.get(api.config.dictionary(), {
+    fetchMock.get(api.config.dictionary('en-EN'), {
       status: 404,
       body: {}
     });
 
-    store.dispatch(fetchDictionary());
+    store.dispatch(fetchDictionary('en-EN'));
     // to track both actions we need to assert on next tick
     setTimeout(() => {
       expect(store.getActions()[0].type).toEqual(expectedActions[0].type);
