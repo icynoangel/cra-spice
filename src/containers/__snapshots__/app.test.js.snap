@@ -6,26 +6,25 @@ exports[`<App /> should render <App /> 1`] = `
   locale="en-EN"
   messages={Object {}}
 >
-  <div
-    className="app"
-    key="app"
-  >
-    <ThemeHandler
-      theme="default"
+  <BrowserRouter>
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(Main)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/"
     />
-    <div
-      className="app-content"
-    >
-      <InjectIntl(ExampleClassComponent)
-        initialCounter={10}
-        key="example-class-component"
-      />
-      <InjectIntl(ExampleFunctionComponent)
-        key="example-function-component"
-        value={100}
-      />
-      <Connect(ThemeSwitcherContainer) />
-    </div>
-  </div>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/admin"
+    />
+  </BrowserRouter>
 </IntlProvider>
 `;

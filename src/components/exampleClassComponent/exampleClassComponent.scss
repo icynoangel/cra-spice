@@ -9,7 +9,8 @@
   .example-class-component__counter {
     @include themify() {
       padding: themed('padding-normal');
-    }  
+    }
+    display: block;  
   }
 
   .example-class-component__button {
