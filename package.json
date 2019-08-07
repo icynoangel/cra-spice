@@ -2,6 +2,10 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/",
+  "author": "icynoangel",
+  "description": "CRA template with Redux, Intl, Theming (with sample components and unit tests)",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
