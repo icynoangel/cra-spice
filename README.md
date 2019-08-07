@@ -1,3 +1,25 @@
+## Tech Stack
+
+- React https://reactjs.org/
+- Redux https://redux.js.org/
+- redux-requests https://www.npmjs.com/package/redux-requests
+- fetch https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- react-intl https://github.com/formatjs/react-intl
+- react-router https://reacttraining.com/react-router/web/guides/quick-start
+- classnames https://github.com/JedWatson/classnames
+- sass https://sass-lang.com/
+- BEM http://getbem.com/
+
+### Unit testing
+
+- Jest https://jestjs.io/
+- Enzyme https://airbnb.io/enzyme/
+- enzyme-to-json https://www.npmjs.com/package/enzyme-to-json
+- fetch-mock https://www.npmjs.com/package/fetch-mock
+- redux-mock-store https://github.com/dmitry-zaets/redux-mock-store
+
+Project is generated with CRA (create-react-app).
+
 
 ## Install steps
 
@@ -5,11 +27,11 @@
 
 `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
 
-### Install node 8.16.0 which comes with npm 6.4.1
+### Install node 10.16.1
 
-`nvm install 8.16.0`
-`nvm use 8.16.0`
-`nvm alias default 8.16.0`
+`nvm install 10.16.1`
+`nvm use 10.16.1`
+`nvm alias default 10.16.1`
 
 ### Install yarn to speed up package instalation
 
