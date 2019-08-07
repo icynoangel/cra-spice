@@ -56,7 +56,7 @@ You will also see any lint errors in the console.
 
 ### `yarn dev`
 
-Also starts node server that at this point only provides Intl messages
+Also starts node server that at this point only provides Intl messages (can be used as proxy for API calls if needed)
 
 ### `yarn test`
 
@@ -100,7 +100,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 `sudo -i`
 
-### Install nvm and node specified at the top of this Readme file
+### Install nvm and node and yarn specified at the top of this Readme file
 
 ### Switch to project folder
 
