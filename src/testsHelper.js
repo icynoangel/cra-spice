@@ -10,6 +10,8 @@ const intlProvider = new IntlProvider(
 );
 const {intl} = intlProvider.getChildContext();
 
+export default intl;
+
 /**
  * When using React-Intl `injectIntl` on components, props.intl is required.
  */

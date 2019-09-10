@@ -5,7 +5,8 @@ import { injectIntl, FormattedMessage } from 'react-intl';
 
 class ExampleClassComponent extends Component {
   static propTypes = {
-    initialCounter: PropTypes.number.isRequired
+    initialCounter: PropTypes.number.isRequired,
+    onClick: PropTypes.func.isRequired
   };
 
   constructor (props) {
@@ -18,7 +19,9 @@ class ExampleClassComponent extends Component {
   handleButtonClick = () => {
     this.setState((state) => ({
       counter: ++state.counter
-    }));
+    }), () => {
+      this.props.onClick(this.state.counter)
+    });
   }
 
   render () {

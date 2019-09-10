@@ -9,15 +9,25 @@ import ThemeSwitcher from './themeSwitcher';
 import ExampleClassComponent from '../components/exampleClassComponent';
 import ExampleFunctionComponent from '../components/exampleFunctionComponent';
 
-const Main = ({theme}) => (
-  <div className="main">
-    <Link to="/admin">Admin</Link>
-    <ThemeHandler key="theme-handler" theme={theme} />
-    <ExampleClassComponent initialCounter={10} key="example-class-component" />
-    <ExampleFunctionComponent value={100} key="example-function-component" />
-    <ThemeSwitcher key="theme-switcher" theme={theme} />
-  </div>
-);
+const Main = ({theme}) => {
+  const handleClick = (counterValue) => {
+    console.log(counterValue);
+  };
+
+  return (
+    <div className="main">
+      <Link to="/admin">Admin</Link>
+      <ThemeHandler key="theme-handler" theme={theme} />
+      <ExampleClassComponent
+        onClick={handleClick}
+        initialCounter={10}
+        key="example-class-component"
+      />
+      <ExampleFunctionComponent value={100} key="example-function-component" />
+      <ThemeSwitcher key="theme-switcher" theme={theme} />
+    </div>
+  );
+};
 
 Main.propTypes = {
   theme: PropTypes.string.isRequired
