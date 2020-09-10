@@ -1,9 +1,9 @@
 import React from 'react';
 import ExampleClassComponent from './exampleClassComponent';
-import {shallowWithIntl} from '../../testsHelper';
+import { shallowWithIntl } from '../../testsHelper';
 import enzymeToJson from 'enzyme-to-json';
 
-describe('<ExampleClassComponent />', function() {
+describe('<ExampleClassComponent />', function () {
   beforeEach(() => {
     this.initialCounter = 10;
     this.handleClick = jest.fn();

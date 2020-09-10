@@ -1,34 +1,35 @@
 import React from 'react';
 import App from './app';
-import {shallow} from 'enzyme';
+import { mount } from 'enzyme';
 import enzymeToJson from 'enzyme-to-json';
+// import { fetchDictionary } from '../actions/dictionary';
 
-describe('<App />', function() {
+const mockDispatch = jest.fn();
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn(() => ({
+    locale: 'en-EN',
+    messages: {},
+    fetched: true
+  })),
+  useDispatch: () => mockDispatch
+}));
+
+describe('<App />', function () {
   beforeEach(() => {
-    this.dictionary = {
-      locale: 'en-EN',
-      messages: {},
-      fetched: true
-    };
-    this.fetchDictionary = jest.fn();
-
     this.getComponent = () => {
-      return (
-        <App.WrappedComponent
-          dictionary={this.dictionary}
-          fetchDictionary={this.fetchDictionary}
-        />
-      );
+      return <App />;
     };
   });
 
   it('should render <App />', () => {
-    const wrapper = shallow(this.getComponent());
+    const wrapper = mount(this.getComponent());
     expect(enzymeToJson(wrapper)).toMatchSnapshot();
   });
 
   it('should fetch dictionary when component mounts', () => {
-    shallow(this.getComponent());
-    expect(this.fetchDictionary).toHaveBeenCalled();
+    mount(this.getComponent());
+    expect(mockDispatch).toHaveBeenCalled();
   });
 });

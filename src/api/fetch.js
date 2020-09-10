@@ -1,4 +1,4 @@
-import {attemptRequest} from 'redux-requests';
+import { attemptRequest } from 'redux-requests';
 
 const checkStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {
@@ -25,11 +25,11 @@ const parseJSON = (response) => {
   return json;
 };
 
-const createAction = (type, url, payload) => {
-  const {requestId} = payload;
+const createAction = (type, url, options) => {
+  const { requestId, payload, ...rest } = options;
 
   const request = new Promise((resolve, reject) => {
-    fetch(url, payload)
+    fetch(url, rest)
       .then(checkStatus)
       .then(parseJSON)
       .then((res) => {

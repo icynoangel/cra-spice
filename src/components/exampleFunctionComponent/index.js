@@ -1,1 +1,1 @@
-export {default} from './exampleFunctionComponent';
+export { default } from './exampleFunctionComponent';

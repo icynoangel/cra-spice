@@ -8,7 +8,7 @@ const PORT = isDevelopment ? 3001 : 80;
 
 const app = express();
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   if (isDevelopment) {
     res.header('Access-Control-Allow-Origin', '*');
   }
@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   // Disable caching for content files
   // res.header("Max-Age", 0);
   // res.header('Last-Modified', (new Date()).toString());
@@ -45,6 +45,6 @@ app.get('/dictionary/:locale', (req, res) => {
   res.sendFile(path.resolve(__dirname, `../i18n/${locale}.json`));
 });
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log('Express server listening on port ' + PORT);
 });

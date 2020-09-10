@@ -9,7 +9,11 @@ const ExampleFunctionComponent = ({ value, intl }) => {
   const multipliedValue = value * MULTIPLY_FACTOR;
   return (
     <div className="example-function-component">
-      {intl.formatMessage({ id: 'multipliedValue', defaultMessage: 'Multiplied Value' })} {multipliedValue}
+      {intl.formatMessage({
+        id: 'multipliedValue',
+        defaultMessage: 'Multiplied Value'
+      })}{' '}
+      {multipliedValue}
     </div>
   );
 };

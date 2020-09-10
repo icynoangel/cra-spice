@@ -1,9 +1,9 @@
 import React from 'react';
 import ExampleFunctionComponent from './exampleFunctionComponent';
-import {shallowWithIntl} from '../../testsHelper';
+import { shallowWithIntl } from '../../testsHelper';
 import enzymeToJson from 'enzyme-to-json';
 
-describe('<ExampleFunctionComponent />', function() {
+describe('<ExampleFunctionComponent />', function () {
   beforeEach(() => {
     this.value = 10;
 

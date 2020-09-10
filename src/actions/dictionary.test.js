@@ -1,12 +1,12 @@
 import * as actionTypes from '../constants/actionTypes';
-import {fetchDictionary} from './/dictionary';
+import { fetchDictionary } from './/dictionary';
 
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import api from '../api';
 import fetchMock from 'fetch-mock';
 
-describe('Actions - dictionary', function() {
+describe('Actions - dictionary', function () {
   it('should call fetchDictionary actions success flow', (done) => {
     const middlewares = [thunk];
     const mockStore = configureMockStore(middlewares);
@@ -18,8 +18,8 @@ describe('Actions - dictionary', function() {
       }
     };
     const expectedActions = [
-      {type: actionTypes.REQUEST_DICTIONARY_PENDING},
-      {type: actionTypes.REQUEST_DICTIONARY_SUCCESS, response}
+      { type: actionTypes.REQUEST_DICTIONARY_PENDING },
+      { type: actionTypes.REQUEST_DICTIONARY_SUCCESS, response }
     ];
 
     const store = mockStore({});
@@ -44,8 +44,8 @@ describe('Actions - dictionary', function() {
     const mockStore = configureMockStore(middlewares);
 
     const expectedActions = [
-      {type: actionTypes.REQUEST_DICTIONARY_PENDING},
-      {type: actionTypes.REQUEST_DICTIONARY_ERROR}
+      { type: actionTypes.REQUEST_DICTIONARY_PENDING },
+      { type: actionTypes.REQUEST_DICTIONARY_ERROR }
     ];
 
     const store = mockStore({});

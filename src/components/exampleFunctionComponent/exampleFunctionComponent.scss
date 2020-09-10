@@ -1,8 +1,6 @@
-@import '../../styles/themes.scss';
+@import '../../styles/variables.scss';
 
 .example-function-component {
-  @include themify() {
-    background-color: themed('content-secondary-bg-color');
-    color: themed('content-secondary-color');
-  }
+  background-color: $content-secondary-bg-color;
+  color: $content-secondary-color;
 }

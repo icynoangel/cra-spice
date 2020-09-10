@@ -1,4 +1,4 @@
-import {REQUEST_DICTIONARY} from '../constants/actionTypes';
+import { REQUEST_DICTIONARY } from '../constants/actionTypes';
 import api from '../api';
 
 export function fetchDictionary(locale) {

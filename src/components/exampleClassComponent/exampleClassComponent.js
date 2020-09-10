@@ -9,40 +9,35 @@ class ExampleClassComponent extends Component {
     onClick: PropTypes.func.isRequired
   };
 
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
-      counter: props.initialCounter 
+      counter: props.initialCounter
     };
   }
 
   handleButtonClick = () => {
-    this.setState((state) => ({
-      counter: ++state.counter
-    }), () => {
-      this.props.onClick(this.state.counter)
-    });
-  }
+    this.setState(
+      (state) => ({
+        counter: ++state.counter
+      }),
+      () => {
+        this.props.onClick(this.state.counter);
+      }
+    );
+  };
 
-  render () {
+  render() {
     const { counter } = this.state;
     return (
       <div className="example-class-component">
         <span className="example-class-component__counter">
-          <FormattedMessage
-            id="counter"
-            defaultMessage="Counter"
-          />
-          : {counter}
+          <FormattedMessage id="counter" defaultMessage="Counter" />: {counter}
         </span>
-        <button 
+        <button
           className="example-class-component__button"
-          onClick={this.handleButtonClick}
-        >
-          <FormattedMessage
-            id="clickMe"
-            defaultMessage="Click Me"
-          />
+          onClick={this.handleButtonClick}>
+          <FormattedMessage id="clickMe" defaultMessage="Click Me" />
         </button>
       </div>
     );

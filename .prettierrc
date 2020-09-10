@@ -1,6 +1,6 @@
 {
   "arrowParens": "always",
-  "bracketSpacing": false,
+  "bracketSpacing": true,
   "jsxBracketSameLine": true,
   "trailingComma": "none",
   "tabWidth": 2,

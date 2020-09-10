@@ -1,5 +1,7 @@
+import { TOKEN_NAME } from '../constants/constants';
+
 const getToken = () => {
-  return localStorage.getItem('portfolio-token');
+  return localStorage.getItem(TOKEN_NAME);
 };
 
 const httpConfig = {

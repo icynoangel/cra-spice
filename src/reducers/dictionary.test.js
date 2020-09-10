@@ -1,11 +1,11 @@
-import dictionary, {initialState} from './dictionary';
+import dictionary, { initialState } from './dictionary';
 import {
   REQUEST_DICTIONARY_PENDING,
   REQUEST_DICTIONARY_SUCCESS,
   REQUEST_DICTIONARY_ERROR
 } from '../constants/actionTypes';
 
-describe('Reducers - dictionary', function() {
+describe('Reducers - dictionary', function () {
   beforeEach(() => {
     this.state = {
       ...initialState
@@ -13,7 +13,7 @@ describe('Reducers - dictionary', function() {
   });
 
   it('should return initial state', () => {
-    expect(dictionary(this.state, {type: 'unhandled'})).toEqual(this.state);
+    expect(dictionary(this.state, { type: 'unhandled' })).toEqual(this.state);
   });
 
   it('should handle REQUEST_DICTIONARY_PENDING action', () => {
