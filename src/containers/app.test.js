@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './app';
 import { render } from '@testing-library/react';
-// import { fetchDictionary } from '../actions/dictionary';
+import { fetchDictionary } from '../actions/dictionary';
 
 const mockDispatch = jest.fn();
 
@@ -29,6 +29,7 @@ describe('<App />', function () {
 
   it('should fetch dictionary when component mounts', () => {
     render(<App />);
-    // expect(mockDispatch).toHaveBeenCalledWith(fetchDictionary);
+    expect(fetchDictionary).toHaveBeenCalledWith('en-EN');
+    expect(mockDispatch).toHaveBeenCalledWith('fetchDictionary');
   });
 });

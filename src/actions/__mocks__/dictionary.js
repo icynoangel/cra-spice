@@ -1,1 +1,1 @@
-export const fetchDictionary = jest.fn();
+export const fetchDictionary = jest.fn(() => 'fetchDictionary');
