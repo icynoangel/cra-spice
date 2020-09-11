@@ -1,220 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> should render <App /> 1`] = `
-<App>
-  <IntlProvider
-    key="en-EN"
-    locale="en-EN"
-    messages={Object {}}
+<div>
+  <div
+    class="main"
   >
-    <BrowserRouter>
-      <Router
-        history={
-          Object {
-            "action": "POP",
-            "block": [Function],
-            "createHref": [Function],
-            "go": [Function],
-            "goBack": [Function],
-            "goForward": [Function],
-            "length": 1,
-            "listen": [Function],
-            "location": Object {
-              "hash": "",
-              "pathname": "/",
-              "search": "",
-              "state": undefined,
-            },
-            "push": [Function],
-            "replace": [Function],
-          }
-        }
+    <a
+      href="/admin"
+    >
+      Admin
+    </a>
+    <div
+      class="example-class-component"
+    >
+      <span
+        class="example-class-component__counter"
+        data-testid="qa-counter-value"
       >
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/"
-        >
-          <Main
-            history={
-              Object {
-                "action": "POP",
-                "block": [Function],
-                "createHref": [Function],
-                "go": [Function],
-                "goBack": [Function],
-                "goForward": [Function],
-                "length": 1,
-                "listen": [Function],
-                "location": Object {
-                  "hash": "",
-                  "pathname": "/",
-                  "search": "",
-                  "state": undefined,
-                },
-                "push": [Function],
-                "replace": [Function],
-              }
-            }
-            location={
-              Object {
-                "hash": "",
-                "pathname": "/",
-                "search": "",
-                "state": undefined,
-              }
-            }
-            match={
-              Object {
-                "isExact": true,
-                "params": Object {},
-                "path": "/",
-                "url": "/",
-              }
-            }
-          >
-            <div
-              className="main"
-            >
-              <Link
-                to="/admin"
-              >
-                <LinkAnchor
-                  href="/admin"
-                  navigate={[Function]}
-                >
-                  <a
-                    href="/admin"
-                    onClick={[Function]}
-                  >
-                    Admin
-                  </a>
-                </LinkAnchor>
-              </Link>
-              <InjectIntl(ExampleClassComponent)
-                initialCounter={10}
-                key="example-class-component"
-                onClick={[Function]}
-              >
-                <ExampleClassComponent
-                  initialCounter={10}
-                  intl={
-                    Object {
-                      "defaultFormats": Object {},
-                      "defaultLocale": "en",
-                      "formatDate": [Function],
-                      "formatHTMLMessage": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatPlural": [Function],
-                      "formatRelative": [Function],
-                      "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
-                        "getDateTimeFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralFormat": [Function],
-                        "getRelativeFormat": [Function],
-                      },
-                      "locale": "en-EN",
-                      "messages": Object {},
-                      "now": [Function],
-                      "onError": [Function],
-                      "textComponent": "span",
-                      "timeZone": null,
-                    }
-                  }
-                  onClick={[Function]}
-                >
-                  <div
-                    className="example-class-component"
-                  >
-                    <span
-                      className="example-class-component__counter"
-                    >
-                      <FormattedMessage
-                        defaultMessage="Counter"
-                        id="counter"
-                        values={Object {}}
-                      >
-                        <span>
-                          Counter
-                        </span>
-                      </FormattedMessage>
-                      : 
-                      10
-                    </span>
-                    <button
-                      className="example-class-component__button"
-                      onClick={[Function]}
-                    >
-                      <FormattedMessage
-                        defaultMessage="Click Me"
-                        id="clickMe"
-                        values={Object {}}
-                      >
-                        <span>
-                          Click Me
-                        </span>
-                      </FormattedMessage>
-                    </button>
-                  </div>
-                </ExampleClassComponent>
-              </InjectIntl(ExampleClassComponent)>
-              <InjectIntl(ExampleFunctionComponent)
-                key="example-function-component"
-                value={100}
-              >
-                <ExampleFunctionComponent
-                  intl={
-                    Object {
-                      "defaultFormats": Object {},
-                      "defaultLocale": "en",
-                      "formatDate": [Function],
-                      "formatHTMLMessage": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatPlural": [Function],
-                      "formatRelative": [Function],
-                      "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
-                        "getDateTimeFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralFormat": [Function],
-                        "getRelativeFormat": [Function],
-                      },
-                      "locale": "en-EN",
-                      "messages": Object {},
-                      "now": [Function],
-                      "onError": [Function],
-                      "textComponent": "span",
-                      "timeZone": null,
-                    }
-                  }
-                  value={100}
-                >
-                  <div
-                    className="example-function-component"
-                  >
-                    Multiplied Value
-                     
-                    1000
-                  </div>
-                </ExampleFunctionComponent>
-              </InjectIntl(ExampleFunctionComponent)>
-            </div>
-          </Main>
-        </Route>
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/admin"
-        />
-      </Router>
-    </BrowserRouter>
-  </IntlProvider>
-</App>
+        <span>
+          Counter
+        </span>
+        : 
+        10
+      </span>
+      <button
+        class="example-class-component__button"
+      >
+        <span>
+          Click Me
+        </span>
+      </button>
+    </div>
+    <div
+      class="example-function-component"
+      role="article"
+    >
+      Multiplied Value
+       
+      1000
+    </div>
+  </div>
+</div>
 `;

@@ -15,7 +15,7 @@ addLocaleData([...en, ...ro]);
 
 const App = () => {
   const dictionary = useSelector((state) => state.dictionary, shallowEqual);
-  const dispatch = useDispatch(fetchDictionary);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchDictionary('en-EN'));

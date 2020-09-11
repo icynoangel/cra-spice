@@ -1,7 +1,6 @@
 import React from 'react';
 import App from './app';
-import { mount } from 'enzyme';
-import enzymeToJson from 'enzyme-to-json';
+import { render } from '@testing-library/react';
 // import { fetchDictionary } from '../actions/dictionary';
 
 const mockDispatch = jest.fn();
@@ -10,26 +9,26 @@ jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
   useSelector: jest.fn(() => ({
     locale: 'en-EN',
-    messages: {},
+    messages: {
+      counter: 'Counter',
+      clickMe: 'Click Me',
+      multipliedValue: 'Multiplied Value'
+    },
     fetched: true
   })),
   useDispatch: () => mockDispatch
 }));
 
-describe('<App />', function () {
-  beforeEach(() => {
-    this.getComponent = () => {
-      return <App />;
-    };
-  });
+jest.mock('../actions/dictionary');
 
+describe('<App />', function () {
   it('should render <App />', () => {
-    const wrapper = mount(this.getComponent());
-    expect(enzymeToJson(wrapper)).toMatchSnapshot();
+    const { container } = render(<App />);
+    expect(container).toMatchSnapshot();
   });
 
   it('should fetch dictionary when component mounts', () => {
-    mount(this.getComponent());
-    expect(mockDispatch).toHaveBeenCalled();
+    render(<App />);
+    // expect(mockDispatch).toHaveBeenCalledWith(fetchDictionary);
   });
 });

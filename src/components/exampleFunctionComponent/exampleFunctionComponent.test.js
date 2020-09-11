@@ -1,19 +1,29 @@
 import React from 'react';
-import ExampleFunctionComponent from './exampleFunctionComponent';
-import { shallowWithIntl } from '../../testsHelper';
-import enzymeToJson from 'enzyme-to-json';
+import { render, screen } from '@testing-library/react';
+import intl, { WrapIntlProvider } from '../../testsHelper';
+import ExampleFunctionComponent, {
+  MULTIPLY_FACTOR
+} from './exampleFunctionComponent';
 
 describe('<ExampleFunctionComponent />', function () {
   beforeEach(() => {
     this.value = 10;
 
     this.getComponent = () => {
-      return <ExampleFunctionComponent.WrappedComponent value={this.value} />;
+      return (
+        <WrapIntlProvider>
+          <ExampleFunctionComponent value={this.value} />
+        </WrapIntlProvider>
+      );
     };
   });
 
   it('should render <ExampleFunctionComponent />', () => {
-    const wrapper = shallowWithIntl(this.getComponent());
-    expect(enzymeToJson(wrapper)).toMatchSnapshot();
+    render(this.getComponent());
+    expect(screen.getByRole('article').textContent).toEqual(
+      `${intl.formatMessage({ id: 'multipliedValue' })} ${
+        this.value * MULTIPLY_FACTOR
+      }`
+    );
   });
 });

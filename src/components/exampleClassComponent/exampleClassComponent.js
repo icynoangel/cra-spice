@@ -31,7 +31,9 @@ class ExampleClassComponent extends Component {
     const { counter } = this.state;
     return (
       <div className="example-class-component">
-        <span className="example-class-component__counter">
+        <span
+          className="example-class-component__counter"
+          data-testid="qa-counter-value">
           <FormattedMessage id="counter" defaultMessage="Counter" />: {counter}
         </span>
         <button
