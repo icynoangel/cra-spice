@@ -1,40 +1,57 @@
-import './app.css';
-import React, { useEffect } from 'react';
+import './App.css';
+import React from 'react';
 import { IntlProvider, addLocaleData } from 'react-intl';
-import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { fetchDictionary } from '../actions/dictionary';
-import Main from './main';
-import Admin from './admin';
+import Main from './Main';
+import Admin from './Admin';
+import Examples from './Examples';
 
 import en from 'react-intl/locale-data/en';
 import ro from 'react-intl/locale-data/ro';
+import FetchData from './Wrappers/FetchData';
+import { HOME_PAGE, ADMIN_PAGE, EXAMPLES_PAGE } from '../constants/routes';
 
 addLocaleData([...en, ...ro]);
 
 const App = () => {
   const dictionary = useSelector((state) => state.dictionary, shallowEqual);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchDictionary('en-EN'));
-  }, [dispatch]);
+  const routes = [
+    { path: HOME_PAGE, component: Main },
+    { path: ADMIN_PAGE, component: Admin },
+    { path: EXAMPLES_PAGE, component: Examples }
+  ];
 
-  if (dictionary.fetched) {
-    return (
+  const fetchDataWrapperProps = {
+    payload: 'en-EN',
+    fetchData: fetchDictionary,
+    error: dictionary.error,
+    isFetching: dictionary.isFetching,
+    fetched: dictionary.fetched
+  };
+
+  return (
+    <FetchData {...fetchDataWrapperProps}>
       <IntlProvider
         key={dictionary.locale}
         locale={dictionary.locale}
         messages={dictionary.messages}>
         <Router>
-          <Route path="/" exact component={Main} />
-          <Route path="/admin" exact component={Admin} />
+          {routes.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              exact
+              component={route.component}
+            />
+          ))}
         </Router>
       </IntlProvider>
-    );
-  }
-  return null;
+    </FetchData>
+  );
 };
 
 export default App;

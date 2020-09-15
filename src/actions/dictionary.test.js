@@ -1,4 +1,5 @@
-import * as actionTypes from '../constants/actionTypes';
+import { REQUEST_DICTIONARY } from '../constants/actionTypes';
+import { PENDING, SUCCESS, ERROR } from '../constants/status';
 import { fetchDictionary } from './/dictionary';
 
 import configureMockStore from 'redux-mock-store';
@@ -18,8 +19,8 @@ describe('Actions - dictionary', function () {
       }
     };
     const expectedActions = [
-      { type: actionTypes.REQUEST_DICTIONARY_PENDING },
-      { type: actionTypes.REQUEST_DICTIONARY_SUCCESS, response }
+      { type: `${REQUEST_DICTIONARY}_${PENDING}` },
+      { type: `${REQUEST_DICTIONARY}_${SUCCESS}`, response }
     ];
 
     const store = mockStore({});
@@ -44,8 +45,8 @@ describe('Actions - dictionary', function () {
     const mockStore = configureMockStore(middlewares);
 
     const expectedActions = [
-      { type: actionTypes.REQUEST_DICTIONARY_PENDING },
-      { type: actionTypes.REQUEST_DICTIONARY_ERROR }
+      { type: `${REQUEST_DICTIONARY}_${PENDING}` },
+      { type: `${REQUEST_DICTIONARY}_${ERROR}` }
     ];
 
     const store = mockStore({});

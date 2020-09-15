@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import intl, { WrapIntlProvider } from '../../testsHelper';
 import ExampleFunctionComponent, {
   MULTIPLY_FACTOR
-} from './exampleFunctionComponent';
+} from './ExampleFunctionComponent';
 
 describe('<ExampleFunctionComponent />', function () {
   beforeEach(() => {
