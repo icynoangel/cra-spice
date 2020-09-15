@@ -22,11 +22,9 @@ const FetchDataWrapper = (props) => {
   if (error) {
     return <ErrorBoundary hasError={!!error} />;
   }
-
   if (isFetching || !fetched) {
     return <Loading />;
   }
-
   return <>{props.children}</>;
 };
 

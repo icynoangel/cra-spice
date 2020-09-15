@@ -15,17 +15,14 @@ describe('<ExampleClassComponent />', function () {
       </WrapIntlProvider>
     );
   };
-
   beforeEach(() => {
     this.initialCounter = 10;
     this.handleClick = jest.fn();
   });
-
   it('should render <ExampleClassComponent />', () => {
     const { container } = render(this.getComponent());
     expect(container).toMatchSnapshot();
   });
-
   it('should increase counter when button is clicked', () => {
     render(this.getComponent());
     userEvent.click(screen.getByRole('button'));

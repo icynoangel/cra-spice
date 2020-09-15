@@ -29,6 +29,7 @@ class ExampleClassComponent extends Component {
 
   render() {
     const { counter } = this.state;
+
     return (
       <div className="example-class-component">
         <span

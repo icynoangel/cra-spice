@@ -17,7 +17,6 @@ describe('<ExampleFunctionComponent />', function () {
       );
     };
   });
-
   it('should render <ExampleFunctionComponent />', () => {
     render(this.getComponent());
     expect(screen.getByRole('article').textContent).toEqual(

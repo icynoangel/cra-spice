@@ -3,14 +3,13 @@ import React from 'react';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import en from 'react-intl/locale-data/en';
+import ro from 'react-intl/locale-data/ro';
 
 import { fetchDictionary } from '../actions/dictionary';
 import Main from './Main';
 import Admin from './Admin';
 import Examples from './Examples';
-
-import en from 'react-intl/locale-data/en';
-import ro from 'react-intl/locale-data/ro';
 import FetchData from './Wrappers/FetchData';
 import { HOME_PAGE, ADMIN_PAGE, EXAMPLES_PAGE } from '../constants/routes';
 

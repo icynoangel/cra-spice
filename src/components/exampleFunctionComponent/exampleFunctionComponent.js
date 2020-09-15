@@ -2,7 +2,6 @@ import './ExampleFunctionComponent.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
-
 export const MULTIPLY_FACTOR = 10;
 
 const ExampleFunctionComponent = ({ value, intl }) => {

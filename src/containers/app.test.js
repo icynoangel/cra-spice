@@ -26,7 +26,6 @@ describe('<App />', function () {
     const { container } = render(<App />);
     expect(container).toMatchSnapshot();
   });
-
   it('should fetch dictionary when component mounts', () => {
     render(<App />);
     expect(fetchDictionary).toHaveBeenCalledWith('en-EN');
