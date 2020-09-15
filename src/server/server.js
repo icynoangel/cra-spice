@@ -45,6 +45,16 @@ app.get('/dictionary/:locale', (req, res) => {
   res.sendFile(path.resolve(__dirname, `../i18n/${locale}.json`));
 });
 
-app.listen(PORT, function () {
+app.get('/examples', (req, res) => {
+  res.json({
+    data: [
+      {id: 1, name: 'Example1'},
+      {id: 2, name: 'Example2'},
+      {id: 3, name: 'Example3'}
+    ]
+  });
+});
+
+app.listen(PORT, function() {
   console.log('Express server listening on port ' + PORT);
 });

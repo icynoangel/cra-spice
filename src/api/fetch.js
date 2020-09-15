@@ -1,4 +1,5 @@
-import { attemptRequest } from 'redux-requests';
+import {attemptRequest} from 'redux-requests';
+import {PENDING, SUCCESS, ERROR} from '../constants/status';
 
 const checkStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {
@@ -49,19 +50,21 @@ const createAction = (type, url, options) => {
       requestId || url,
       {
         begin: () => ({
-          type: `${type}_PENDING`,
+          type: `${type}_${PENDING}`,
           payload
         }),
         success: (response) => ({
-          type: `${type}_SUCCESS`,
+          type: `${type}_${SUCCESS}`,
           response,
           payload
         }),
-        failure: (error) => ({
-          type: `${type}_ERROR`,
-          error,
-          payload
-        })
+        failure: (error) => {
+          return {
+            type: `${type}_${ERROR}`,
+            error,
+            payload
+          };
+        }
       },
       makeRequest,
       dispatch

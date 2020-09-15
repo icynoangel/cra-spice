@@ -1,32 +1,30 @@
-import {REQUEST_DICTIONARY} from '../constants/actionTypes';
+import {REQUEST_EXAMPLES} from '../constants/actionTypes';
 import {PENDING, SUCCESS, ERROR} from '../constants/status';
 
 export const initialState = {
   messages: {},
-  locale: 'en-EN',
   isFetching: false,
   fetched: false,
   error: null
 };
 
-const dictionary = (state = initialState, action) => {
+const examples = (state = initialState, action) => {
   const {type, response, error} = action;
 
   switch (type) {
-    case `${REQUEST_DICTIONARY}_${PENDING}`:
+    case `${REQUEST_EXAMPLES}_${PENDING}`:
       return {
         ...state,
         isFetching: true
       };
-    case `${REQUEST_DICTIONARY}_${SUCCESS}`:
+    case `${REQUEST_EXAMPLES}_${SUCCESS}`:
       return {
-        messages: response.messages,
-        locale: response.locale,
+        data: response.data,
         isFetching: false,
         fetched: true,
         error: null
       };
-    case `${REQUEST_DICTIONARY}_${ERROR}`:
+    case `${REQUEST_EXAMPLES}_${ERROR}`:
       return {
         ...state,
         isFetching: false,
@@ -39,4 +37,4 @@ const dictionary = (state = initialState, action) => {
   }
 };
 
-export default dictionary;
+export default examples;

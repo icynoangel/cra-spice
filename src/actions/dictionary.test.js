@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import api from '../api';
 import fetchMock from 'fetch-mock';
 
-describe('Actions - dictionary', function () {
+describe.skip('Actions - dictionary', function () {
   it('should call fetchDictionary actions success flow', (done) => {
     const middlewares = [thunk];
     const mockStore = configureMockStore(middlewares);

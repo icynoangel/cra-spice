@@ -5,7 +5,7 @@ import {
   REQUEST_DICTIONARY_ERROR
 } from '../constants/actionTypes';
 
-describe('Reducers - dictionary', function () {
+describe.skip('Reducers - dictionary', function () {
   beforeEach(() => {
     this.state = {
       ...initialState
