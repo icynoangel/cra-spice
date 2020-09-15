@@ -1,3 +1,1 @@
-import Examples from './Examples';
-
-export default Examples;
+export { default } from './Examples';

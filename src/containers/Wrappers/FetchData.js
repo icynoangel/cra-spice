@@ -1,10 +1,10 @@
-import ErrorBoundary from '../components/Placeholders/ErrorBoundary';
-import Loading from '../components/Placeholders/Loading';
+import ErrorBoundary from '../../components/Placeholders/ErrorBoundary';
+import Loading from '../../components/Placeholders/Loading';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 const FetchDataWrapper = (props) => {
-  const { payload, fetchData, resetData, error, isFetching } = props;
+  const { payload, fetchData, resetData, error, isFetching, fetched } = props;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const FetchDataWrapper = (props) => {
     return <ErrorBoundary hasError={!!error} />;
   }
 
-  if (isFetching) {
+  if (isFetching || !fetched) {
     return <Loading />;
   }
 

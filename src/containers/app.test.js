@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './app';
+import App from './App';
 import { render } from '@testing-library/react';
 import { fetchDictionary } from '../actions/dictionary';
 

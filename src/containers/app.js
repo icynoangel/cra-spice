@@ -1,17 +1,17 @@
-import './app.css';
+import './App.css';
 import React from 'react';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { fetchDictionary } from '../actions/dictionary';
-import Main from './main';
-import Admin from './admin';
+import Main from './Main';
+import Admin from './Admin';
 import Examples from './Examples';
 
 import en from 'react-intl/locale-data/en';
 import ro from 'react-intl/locale-data/ro';
-import FetchDataWrapper from './fetchDataWrapper';
+import FetchData from './Wrappers/FetchData';
 import { HOME_PAGE, ADMIN_PAGE, EXAMPLES_PAGE } from '../constants/routes';
 
 addLocaleData([...en, ...ro]);
@@ -29,11 +29,12 @@ const App = () => {
     payload: 'en-EN',
     fetchData: fetchDictionary,
     error: dictionary.error,
-    isFetching: dictionary.isFetching
+    isFetching: dictionary.isFetching,
+    fetched: dictionary.fetched
   };
 
   return (
-    <FetchDataWrapper {...fetchDataWrapperProps}>
+    <FetchData {...fetchDataWrapperProps}>
       <IntlProvider
         key={dictionary.locale}
         locale={dictionary.locale}
@@ -49,7 +50,7 @@ const App = () => {
           ))}
         </Router>
       </IntlProvider>
-    </FetchDataWrapper>
+    </FetchData>
   );
 };
 

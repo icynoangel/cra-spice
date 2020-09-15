@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import ExampleClassComponent from '../components/exampleClassComponent';
-import ExampleFunctionComponent from '../components/exampleFunctionComponent';
+import ExampleClassComponent from '../components/ExampleClassComponent';
+import ExampleFunctionComponent from '../components/ExampleFunctionComponent';
 
 const Main = () => {
   const handleClick = (counterValue) => {
