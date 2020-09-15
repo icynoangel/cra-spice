@@ -1,11 +1,8 @@
 import dictionary, { initialState } from './dictionary';
-import {
-  REQUEST_DICTIONARY_PENDING,
-  REQUEST_DICTIONARY_SUCCESS,
-  REQUEST_DICTIONARY_ERROR
-} from '../constants/actionTypes';
+import { REQUEST_DICTIONARY } from '../constants/actionTypes';
+import { PENDING, SUCCESS, ERROR } from '../constants/status';
 
-describe.skip('Reducers - dictionary', function () {
+describe('Reducers - dictionary', function () {
   beforeEach(() => {
     this.state = {
       ...initialState
@@ -22,7 +19,7 @@ describe.skip('Reducers - dictionary', function () {
       isFetching: true
     };
     const action = {
-      type: REQUEST_DICTIONARY_PENDING
+      type: `${REQUEST_DICTIONARY}_${PENDING}`
     };
     expect(dictionary(initialState, action)).toEqual(expected);
   });
@@ -41,7 +38,7 @@ describe.skip('Reducers - dictionary', function () {
       ...response
     };
     const action = {
-      type: REQUEST_DICTIONARY_SUCCESS,
+      type: `${REQUEST_DICTIONARY}_${SUCCESS}`,
       response
     };
     expect(
@@ -66,7 +63,7 @@ describe.skip('Reducers - dictionary', function () {
       ...response
     };
     const action = {
-      type: REQUEST_DICTIONARY_ERROR,
+      type: `${REQUEST_DICTIONARY}_${ERROR}`,
       ...response
     };
     expect(

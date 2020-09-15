@@ -1,5 +1,5 @@
-import {REQUEST_DICTIONARY} from '../constants/actionTypes';
-import {PENDING, SUCCESS, ERROR} from '../constants/status';
+import { REQUEST_DICTIONARY } from '../constants/actionTypes';
+import { PENDING, SUCCESS, ERROR } from '../constants/status';
 
 export const initialState = {
   messages: {},
@@ -10,7 +10,7 @@ export const initialState = {
 };
 
 const dictionary = (state = initialState, action) => {
-  const {type, response, error} = action;
+  const { type, response, error } = action;
 
   switch (type) {
     case `${REQUEST_DICTIONARY}_${PENDING}`:

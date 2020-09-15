@@ -1,5 +1,5 @@
-import {REQUEST_EXAMPLES} from '../constants/actionTypes';
-import {PENDING, SUCCESS, ERROR} from '../constants/status';
+import { REQUEST_EXAMPLES } from '../constants/actionTypes';
+import { PENDING, SUCCESS, ERROR } from '../constants/status';
 
 export const initialState = {
   messages: {},
@@ -9,7 +9,7 @@ export const initialState = {
 };
 
 const examples = (state = initialState, action) => {
-  const {type, response, error} = action;
+  const { type, response, error } = action;
 
   switch (type) {
     case `${REQUEST_EXAMPLES}_${PENDING}`:

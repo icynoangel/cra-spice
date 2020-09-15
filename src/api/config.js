@@ -3,5 +3,5 @@ const localServerUrl = `${config.protocol}://${window.location.hostname}:${confi
 
 export default {
   dictionary: (locale) => `${localServerUrl}/dictionary/${locale}`,
-  examples: `${localServerUrl}/examples`
+  examples: () => `${localServerUrl}/examples`
 };

@@ -1,5 +1,5 @@
-import {attemptRequest} from 'redux-requests';
-import {PENDING, SUCCESS, ERROR} from '../constants/status';
+import { attemptRequest } from 'redux-requests';
+import { PENDING, SUCCESS, ERROR } from '../constants/status';
 
 const checkStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {

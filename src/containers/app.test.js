@@ -21,7 +21,7 @@ jest.mock('react-redux', () => ({
 
 jest.mock('../actions/dictionary');
 
-describe.skip('<App />', function () {
+describe('<App />', function () {
   it('should render <App />', () => {
     const { container } = render(<App />);
     expect(container).toMatchSnapshot();
